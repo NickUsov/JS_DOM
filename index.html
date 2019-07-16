@@ -12,7 +12,7 @@
         <div><input class="image" type="text"></div>
         <div><input class="btn" type="button" value="Publish"></div>
     </form>
-    <div class="block" style="display:flex; justify-content:space-around;">
+    <div class="block" style="display:flex; justify-content:space-around;flex-wrap: wrap">
 
     </div>
     <!-- <div class="publish" style="width: 25%">
@@ -29,12 +29,12 @@
             let contentValue = document.querySelector('.content').value;
             let imageValue = document.querySelector('.image').value;
             let div = document.createElement('div');
-            div.innerHTML = `<div class="publish" style="width: 25%">
-                <h3 class="publish_header">${headerValue}</h3>
+            div.className = 'publish';
+            div.setAttribute('style', 'width: 25%');
+            div.innerHTML = `<h3 class="publish_header">${headerValue}</h3>
                 <img src="${imageValue}" alt="image" class="publish_image">
                 <p class="publish_content">${contentValue}</p>
-                <p class="publish_autor">${autorValue}</p>
-                </div>`;
+                <p class="publish_autor">${autorValue}</p>`;
             document.querySelector('.block').appendChild(div); 
         })
     </script>
