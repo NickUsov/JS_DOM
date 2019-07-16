@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM</title>
+</head>
+<body>
+    <form action="#">
+        <div><input class="autor" type="text"></div>
+        <div><input class="header" type="text"></div>
+        <div><input class="content" type="text"></div>
+        <div><input class="image" type="text"></div>
+        <div><input class="btn" type="button" value="Publish"></div>
+    </form>
+    <div class="block" style="display:flex; justify-content:space-around;">
+
+    </div>
+    <!-- <div class="publish" style="width: 25%">
+        <h3 class="publish_header"></h3>
+        <img src="#" alt="image" class="publish_image">
+        <p class="publish_content"></p>
+        <p class="publish_autor"></p>
+    </div> -->
+    <script>
+        let btn = document.querySelector('.btn');
+        btn.addEventListener('click', ()=>{
+            let autorValue = document.querySelector('.autor').value;
+            let headerValue = document.querySelector('.header').value;
+            let contentValue = document.querySelector('.content').value;
+            let imageValue = document.querySelector('.image').value;
+            let div = document.createElement('div');
+            div.innerHTML = `<div class="publish" style="width: 25%">
+                <h3 class="publish_header">${headerValue}</h3>
+                <img src="${imageValue}" alt="image" class="publish_image">
+                <p class="publish_content">${contentValue}</p>
+                <p class="publish_autor">${autorValue}</p>
+                </div>`;
+            document.querySelector('.block').appendChild(div); 
+        })
+    </script>
+</body>
+</html>
